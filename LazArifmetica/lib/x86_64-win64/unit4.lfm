@@ -1,0 +1,106 @@
+object Form4: TForm4
+  Left = 884
+  Height = 344
+  Top = 347
+  Width = 586
+  BorderStyle = bsSingle
+  Caption = 'Задание 3'
+  ClientHeight = 0
+  ClientWidth = 0
+  Position = poDesktopCenter
+  LCLVersion = '3.0.0.3'
+  object Edit1: TEdit
+    Left = 104
+    Height = 38
+    Top = 112
+    Width = 88
+    Font.Height = 30
+    ParentFont = False
+    TabOrder = 0
+    OnKeyPress = OnKeyPress
+  end
+  object Label1: TLabel
+    Left = 104
+    Height = 25
+    Top = 80
+    Width = 84
+    Caption = 'Сторона a'
+    Font.Height = 25
+    ParentFont = False
+  end
+  object Edit3: TEdit
+    Left = 264
+    Height = 28
+    Top = 200
+    Width = 184
+    Alignment = taCenter
+    Font.Height = 20
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Label3: TLabel
+    Left = 160
+    Height = 25
+    Top = 200
+    Width = 84
+    Caption = 'Высоты = '
+    Font.Height = 25
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 104
+    Height = 30
+    Top = 8
+    Width = 393
+    Caption = 'Площадь треугольника по трем сторнам'
+    Font.Height = 30
+    ParentFont = False
+  end
+  object Edit2: TEdit
+    Left = 256
+    Height = 38
+    Top = 112
+    Width = 88
+    Font.Height = 30
+    ParentFont = False
+    TabOrder = 2
+    OnKeyPress = OnKeyPress
+  end
+  object Label2: TLabel
+    Left = 256
+    Height = 25
+    Top = 80
+    Width = 86
+    Caption = 'Сторона b'
+    Font.Height = 25
+    ParentFont = False
+  end
+  object Edit5: TEdit
+    Left = 409
+    Height = 38
+    Top = 112
+    Width = 88
+    Font.Height = 30
+    ParentFont = False
+    TabOrder = 3
+    OnKeyPress = OnKeyPress
+  end
+  object Label5: TLabel
+    Left = 409
+    Height = 25
+    Top = 80
+    Width = 83
+    Caption = 'Сторона c'
+    Font.Height = 25
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 224
+    Height = 44
+    Top = 264
+    Width = 156
+    Caption = 'Вычислить'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+end
