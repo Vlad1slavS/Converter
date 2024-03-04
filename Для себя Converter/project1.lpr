@@ -10,7 +10,7 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, unit1,
+  Forms, main_unit,
   Classes, opensslsockets,
   fphttpclient, fpjson, jsonparser;
 

@@ -18,14 +18,16 @@ uses
 
 
 var
-  jObj: TJSONObject;
+  JSONData: TJSONObject;
+  ValuteData: TJSONObject;
   JArr: TJSONArray;
-  jEnum: TJSONEnum;
-  response: string;
+  CurrencyCode, response: string;
+  CurrencyValue: real;
 
 
 begin
   RequireDerivedFormResource:=True;
+  Application.Title:='Конвертер валют';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
@@ -33,6 +35,28 @@ begin
 
   jArr := TJSONArray.Create;
   writeln('Отправляю запрос!');
+
+  try
+     response := TFPHTTPClient.SimpleGet('https://www.cbr-xml-daily.ru/daily_json.js');
+
+     JSONData := TJSONObject(GetJSON(response));
+
+     CurrencyCode := 'USD';  // Код валюты, которую нужно извлечь
+     ValuteData := JSONData.Objects['Valute'].Find(CurrencyCode) as TJSONObject;
+
+     if ValuteData <> Nil then
+    begin
+      CurrencyValue := ValuteData.Get('Value');
+      writeln('Курс валюты: ', CurrencyValue:0:2);
+    end
+    else
+    begin
+      writeln('Указанная валюта не найдена в JSON!');
+    end;
+
+  finally
+    jArr.Free;
+  end;
 
 end.
 
